@@ -4,10 +4,11 @@ i dati per essere visualizzati sul terminale
 Il progetto in Visual Studio comprende 3 sottoprogetti:
 1.Dati (qui si trovano la mapatura dei file in Models-FileModel e FolderModel
  IDATA e Dati servono per il recupero delle informazioni dalla connectione specificata in appsettings.json)
- Sono stati utilizzati i pachetti nuget Microsoft.Extensions.Configuration.Abstractions e Newtonsoft.json (questo ultimo per la serializzatione e deserializzatione dei json)
+ Sono stati utilizzati i pachetti nuget Microsoft.Extensions.Configuration.Abstractions 
  2.Api che riferenzia Dati ed expone le chiamate in DatiControler; il colegamento ai dati è fatto tramite "services.AddSingleton<IDati, DatiFolder>();" 
  presente in startup.cs
  Una volta realizzati i primi due progetti deve essere fatto run al progetto per exporere la get
  3.Console - questo progetto recupera i dati dalle api exposte dal secondo progetto tramite metodi asincroni e expone i dati al terminale
+ Il progetto console usa i seguenti i pacchetti nuget Microsoft.AspNet.WebApi.Client (per poter utilizzare in program.cs metodi asincroni del tipo ReadAsAsync) e Newtonsoft.json (questo ultimo per la serializzatione e deserializzatione dei json)
  
  
